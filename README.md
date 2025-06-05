@@ -7,6 +7,9 @@ Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli
 ## Servidor de desenvolvimento
 
 Execute `ng serve` para iniciar um servidor de desenvolvimento. Acesse `http://localhost:4200/`. A aplicação será recarregada automaticamente se você alterar qualquer um dos arquivos fonte.
+Funcionamentos:
+1. Iniciamente exibe todos os dashborad escondidos, mas ao cliecar é retornado.
+2. Caso queira esconder o diagrama, clique em cima do título(exemplo: Canditatos).
 
 ## Geração de código
 
