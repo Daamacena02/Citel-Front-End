@@ -1,0 +1,68 @@
+<mat-toolbar color="primary" class="mat-elevation-z4 toolbar-center">
+  <span class="dashboard-title">📊 CITEL Menu Dashboard</span>
+</mat-toolbar>
+
+
+<div class="dashboard-grid">
+
+  <mat-card>
+    <mat-card-title (click)="toggle('Candidatos')" style="cursor: pointer;">Candidatos por Estado</mat-card-title>
+    <mat-card-content *ngIf="showCandidatos">
+      <app-bar-chart [data]="candidatosPorEstado"></app-bar-chart>
+      <mat-list>
+        <mat-list-item *ngFor="let estado of candidatosPorEstado | keyvalue">
+          {{ estado.key }}: {{ estado.value }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title (click)="toggle('Imc')" style="cursor: pointer;">IMC Médio por Faixa Etária</mat-card-title>
+    <mat-card-content *ngIf="showImc">
+      <app-bar-chart [data]="imcPorFaixaEtaria"></app-bar-chart>
+      <mat-list>
+        <mat-list-item *ngFor="let faixa of imcPorFaixaEtaria | keyvalue">
+          {{ faixa.key }}: {{ faixa.value }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title (click)="toggle('Obesos')" style="cursor: pointer;">Percentual de Obesos por Sexo</mat-card-title>
+    <mat-card-content *ngIf="showObesos">
+      <app-bar-chart [data]="percentualObesos"></app-bar-chart>
+      <mat-list>
+        <mat-list-item *ngFor="let sexo of percentualObesos | keyvalue">
+          {{ sexo.key }}: {{ sexo.value }}%
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title (click)="toggle('Idade')" style="cursor: pointer;">Média de Idade por Tipo Sanguíneo</mat-card-title>
+    <mat-card-content *ngIf="showIdade">
+      <app-bar-chart [data]="mediaIdadePorTipo"></app-bar-chart>
+      <mat-list>
+        <mat-list-item *ngFor="let tipo of mediaIdadePorTipo | keyvalue">
+          {{ tipo.key }}: {{ tipo.value }} anos
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title (click)="toggle('Doadores')" style="cursor: pointer;">Possíveis Doadores por Tipo Sanguíneo</mat-card-title>
+    <mat-card-content *ngIf="showDoadores">
+      <app-bar-chart [data]="possiveisDoadores"></app-bar-chart>
+      <mat-list>
+        <mat-list-item *ngFor="let tipo of possiveisDoadores | keyvalue">
+          {{ tipo.key }}: {{ tipo.value }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+</div>
